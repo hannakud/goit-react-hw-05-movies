@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  padding: 20px 40px;
+}
+
+.poster {
+  height: 600px;
+  width: 400px;
+}

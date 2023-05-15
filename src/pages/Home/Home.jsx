@@ -2,6 +2,7 @@ import Loader from 'components/Loader/Loader';
 import MoviesList from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
 import { getTrendMovies } from 'services/Api';
+import { toast } from 'react-toastify';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -15,7 +16,7 @@ const Home = () => {
         console.log(moviesList);
         setMovies(moviesList);
       } catch (error) {
-        console.log(error);
+        toast.error(' Sorry, there is mistake in server');
       } finally {
         setIsLoading(false);
       }

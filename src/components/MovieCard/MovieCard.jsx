@@ -1,4 +1,6 @@
 import css from './MovieCard.module.css';
+import PropTypes from 'prop-types';
+
 const MovieCard = ({
   title,
   releaseYear,
@@ -28,4 +30,12 @@ const MovieCard = ({
   );
 };
 
+MovieCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  releaseYear: PropTypes.number.isRequired,
+  overview: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  rating: PropTypes.number.isRequired,
+};
 export default MovieCard;

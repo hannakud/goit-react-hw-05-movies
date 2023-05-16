@@ -1,6 +1,28 @@
+.navigation {
+}
 .wrapper {
   display: flex;
   gap: 20px;
   flex-direction: row;
   align-items: center;
+}
+
+.link {
+  padding: 10px;
+  margin: 5px;
+  color: black;
+  border-radius: 3px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color, color 250ms ease-in-out;
+}
+
+.link:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.active {
+  color: #e21010;
+  font-weight: 600;
+  background-color: rgb(221, 221, 221);
 }

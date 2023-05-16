@@ -6,18 +6,32 @@ const { Outlet, NavLink } = require('react-router-dom');
 
 const Layout = () => {
   return (
-    <div>
-      <nav>
+    <header>
+      <nav className={css.navigation}>
         <ul className={css.wrapper}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? css.link + ' ' + css.active : css.link
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? css.link + ' ' + css.active : css.link
+            }
+            to="/movies"
+          >
+            Movies
+          </NavLink>
         </ul>
       </nav>
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       <ToastContainer />
-    </div>
+    </header>
   );
 };
 

@@ -1,7 +1,6 @@
 import { getReviews } from '../../services/Api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import css from './Reviews.module.css';
 import Loader from 'components/Loader/Loader';
 
@@ -15,10 +14,9 @@ const Reviews = () => {
       try {
         setIsLoading(true);
         const comments = await getReviews(id);
-        console.log(comments);
         setReviews(comments);
       } catch (error) {
-        toast.error(' Sorry, there is mistake in server with review');
+        console.log(error);
       } finally {
         setIsLoading(false);
       }
@@ -27,7 +25,7 @@ const Reviews = () => {
   }, [movieId]);
 
   const isShowNoRecords = reviews.length === 0 && !isLoading;
-  const isShowReviews = reviews.length && !isLoading;
+  const isShowReviews = reviews.length > 0 && !isLoading;
 
   return (
     <>

@@ -17,7 +17,7 @@ const Cast = () => {
         const castList = await getCast(id);
         setCast(castList);
       } catch (error) {
-        toast.error(' Sorry, there is mistake in server');
+        toast.error(' Sorry, there is no cast');
       } finally {
         setIsLoading(false);
       }
@@ -25,7 +25,7 @@ const Cast = () => {
     loadCast(movieId);
   }, [movieId]);
 
-  const isShowCast = cast.length && !isLoading;
+  const isShowCast = cast.length > 0 && !isLoading;
 
   return (
     <>
@@ -38,8 +38,7 @@ const Cast = () => {
                 <img src={profile} alt={name} width="140" height="175" />
                 <div className={css.description}>
                   <h3>{name}</h3>
-                  <h4>Character: </h4>
-                  <p>{character}</p>
+                  <p>Character: {character}</p>
                 </div>
               </li>
             ))}

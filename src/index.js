@@ -7,8 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter basename="/goit-react-hw-05-movies">
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <App />
   </BrowserRouter>
 );

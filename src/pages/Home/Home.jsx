@@ -13,7 +13,6 @@ const Home = () => {
       try {
         setIsLoading(true);
         const moviesList = await getTrendMovies();
-        console.log(moviesList);
         setMovies(moviesList);
       } catch (error) {
         toast.error(' Sorry, there is mistake in server');

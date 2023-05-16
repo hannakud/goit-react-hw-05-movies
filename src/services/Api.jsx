@@ -47,7 +47,6 @@ export const getMoviesDetails = async movieId => {
     vote_average,
   } = response.data;
 
-  console.log(response.data);
   const releaseDate = new Date(release_date);
   const releaseYear = isNaN(releaseDate)
     ? 'Unknown'

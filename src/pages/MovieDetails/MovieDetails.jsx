@@ -16,7 +16,6 @@ const MovieDetails = () => {
       try {
         setIsLoading(true);
         const movieDetails = await getMoviesDetails(movieId);
-        console.log(movieDetails);
         setMovie(movieDetails);
       } catch (error) {
         toast.error(' Sorry, there is mistake in server');

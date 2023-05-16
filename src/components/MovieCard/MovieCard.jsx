@@ -17,8 +17,12 @@ const MovieCard = ({
         <div>User score: {(rating * 10).toFixed(0)}%</div>
         <h4>Overview</h4>
         <p>{overview}</p>
-        <h4>Genres</h4>
-        <p>{genres.join(', ')}</p>
+        {genres.length && (
+          <div>
+            <h4>Genres</h4>
+            <p>{genres.join('  ')}</p>
+          </div>
+        )}
       </div>
     </div>
   );

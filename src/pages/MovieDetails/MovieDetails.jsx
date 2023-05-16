@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { getMoviesDetails } from 'services/Api';
+import css from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -41,7 +42,7 @@ const MovieDetails = () => {
         />
       )}
 
-      <ul>
+      <ul className={css.list}>
         <li>
           <Link to="cast">Cast</Link>
         </li>
@@ -49,7 +50,7 @@ const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={isLoading && <Loader />}>
         <Outlet />
       </Suspense>
     </div>

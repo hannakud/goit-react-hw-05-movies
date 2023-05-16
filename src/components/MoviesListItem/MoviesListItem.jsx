@@ -5,7 +5,7 @@ const MoviesListItem = ({ id, title, overview, poster }) => {
     <li className={css.MoviesListItem}>
       <img className={css.poster} src={poster} alt={title} />
       <h4>{title}</h4>
-      <p>{overview}</p>
+      <p className={css.text}>{overview}</p>
       <Link to={`/movies/${id}`}>Show details</Link>
     </li>
   );

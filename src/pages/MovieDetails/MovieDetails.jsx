@@ -1,7 +1,7 @@
 import Loader from 'components/Loader/Loader';
 import MovieCard from 'components/MovieCard/MovieCard';
 import { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { getMoviesDetails } from 'services/Api';
 import css from './MovieDetails.module.css';
@@ -10,6 +10,8 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState(false);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     const loadTrending = async () => {
@@ -30,6 +32,7 @@ const MovieDetails = () => {
 
   return (
     <div>
+      <Link to={backLinkHref}>GO BACK</Link>
       {movie && (
         <MovieCard
           title={title}

@@ -9,3 +9,17 @@
   border-top: 1px solid #d3d3d3;
   border-bottom: 1px solid #d3d3d3;
 }
+a {
+  padding-left: 40px;
+  margin: 5px;
+  color: black;
+  border-radius: 3px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color, color 250ms ease-in-out;
+}
+
+a:hover {
+  color: #e21010;
+  font-weight: 600;
+}

@@ -1,15 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import css from './MoviesListItem.module.css';
 import PropTypes from 'prop-types';
 
 const MoviesListItem = ({ id, title, overview, poster }) => {
+  const location = useLocation();
   return (
     <li className={css.MoviesListItem}>
       <img className={css.poster} src={poster} alt={title} />
       <h4>{title}</h4>
       <p className={css.text}>{overview}</p>
       <div className={css.LinkWrapper}>
-        <Link to={`/movies/${id}`}>Show details</Link>
+        <Link to={`/movies/${id}`} state={{ from: location }}>
+          Show details
+        </Link>
       </div>
     </li>
   );
